@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Heyyy 💖</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #fef4f8;
+        background-image: url("images/bg.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: #333;
+        text-align: center;
+        align-items: center;
+        padding: 80px 20px;
+        overflow: hidden;
+      }
+      /* 
+      body {
+        background: #fff0f6
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+        padding: 80px 20px;
+        overflow: hidden;
+      } */
+
+      h1 {
+        font-size: 28px;
+        color: #ae1145;
+        margin-bottom: 50px;
+      }
+
+      .buttons {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        height: 250px;
+        margin: 0 auto;
+      }
+
+      button {
+        padding: 12px 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        position: absolute;
+      }
+
+      .yes-btn {
+        background-color: #ff69b4;
+        color: white;
+        left: 25%;
+        top: 40%;
+      }
+
+      .no-btn {
+        background-color: #ccc;
+        color: #444;
+        left: 55%;
+        top: 40%;
+      }
+
+      .note {
+        margin-top: 40px;
+        font-size: 14px;
+        color: #4d4d4d;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 22px;
+        }
+
+        .yes-btn,
+        .no-btn {
+          font-size: 14px;
+          padding: 10px 20px;
+        }
+
+        .buttons {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Heyyyy... 💕<br />Would you go out with me on your birthday?</h1>
+
+    <div class="buttons">
+      <button class="yes-btn" onclick="goToPlan()">Yes 😚</button>
+      <button class="no-btn" onmouseover="runAway(this)">No 🙅🏻‍♀️</button>
+    </div>
+
+    <p class="note">You already know the right answer 😤💗</p>
+
+    <script>
+      function goToPlan() {
+        window.location.href = "plan.html"; // Your cute timeline page
+      }
+
+      function runAway(btn) {
+        const container = document.querySelector(".buttons");
+        const containerRect = container.getBoundingClientRect();
+
+        const btnWidth = btn.offsetWidth;
+        const btnHeight = btn.offsetHeight;
+
+        // Generate random positions within container bounds
+        const maxX = container.clientWidth - btnWidth;
+        const maxY = container.clientHeight - btnHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        btn.style.left = `${randomX}px`;
+        btn.style.top = `${randomY}px`;
+      }
+    </script>
+  </body>
+</html>
